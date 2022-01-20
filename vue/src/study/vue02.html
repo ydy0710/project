@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue.js Sample</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>   
+    </script> 
+  </head>
+  <body>
+    <div id="app">
+      {{ message }}
+      <my-component></my-component>
+      <p v-if="seen1">이제 나를 볼 수 있어요1</p>
+      <p v-if="seen2">이제 나를 볼 수 있어요2</p>
+      <p v-if="seen3">이제 나를 볼 수 있어요3</p>
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+      <!-- app 내부에 있어야 이벤트 동작함 -->
+      <button v-on:click="reverseMessage">메시지 뒤집기</button> 
+      <!-- 텍스트 입력시 message 사용 텍스트들도 동기 변경됨 -->
+      <input v-model="message">
+    </div>
+    <button onclick="Seen2Change()"> Seen2Change </button>
+
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          message: "Hello Vue.js!1",
+          seen1: true,
+          seen2: false,
+          todos: [
+                  { text: 'JavaScript 배우기' },
+                  { text: 'Vue 배우기' },
+                  { text: '무언가 멋진 것을 만들기' }
+                ]
+        },
+        methods: {
+          reverseMessage: function (event) {
+            //("test");
+            this.message = this.message.split('').reverse().join('');
+            //alert(this.message);
+
+            // `event` 는 네이티브 DOM 이벤트입니다
+            if (event) {
+              //alert(event.target.tagName)
+            }            
+          }
+        },       
+        // 컴포넌트 등록 코드
+        components: {
+          // '컴포넌트 이름': 컴포넌트 내용
+          "my-component": {
+            template: "<div>A custom component!</div>"
+          }
+        }        
+      });
+
+      function Seen2Change() {   
+        app.seen2 = !app.seen2;
+        app.message = "test";
+        app.todos.push({ text: 'New item' })
+
+        // 직접 메소드 호출
+        app.reverseMessage();
+      } 
+      
+    </script>
+  </body>
+</html>
