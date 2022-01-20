@@ -1,3 +1,13 @@
+Git의 주요 개념들
+▶️ merge: 한 branch에서 완성한 작업을 다른 branch에 병합하기
+▶️ tag: 특정 이력을 가지는 commit에 대한 참조
+▶️ pull request: 완료한 작업을 다른 사람이 리뷰하고 병합하도록 요청하기
+▶️ issue: 기능에 대한 논의, 버그 추적하기
+▶️ wiki: 링크들을 연결해 웹페이지 만들기
+▶️ push: 내 컴퓨터 로컬에 저장되어 있던 버전 정보를 서버(git 저장소)에 올리기
+▶️ pull: Git 저장소 서버로부터 내 컴퓨터 로컬로 버전 정보 전체를 가져오기
+
+
 
 - 특정 폴더를 생성한다.
 mkdir 
@@ -23,13 +33,9 @@ git status
 git commit
 
 
+// 터미널에 git 계정 정보 설정 코드 입력
+$ git config --global user.name ""
+$ git config --global user.email ""
 
 
-Git의 주요 개념들
-▶️ merge: 한 branch에서 완성한 작업을 다른 branch에 병합하기
-▶️ tag: 특정 이력을 가지는 commit에 대한 참조
-▶️ pull request: 완료한 작업을 다른 사람이 리뷰하고 병합하도록 요청하기
-▶️ issue: 기능에 대한 논의, 버그 추적하기
-▶️ wiki: 링크들을 연결해 웹페이지 만들기
-▶️ push: 내 컴퓨터 로컬에 저장되어 있던 버전 정보를 서버(git 저장소)에 올리기
-▶️ pull: Git 저장소 서버로부터 내 컴퓨터 로컬로 버전 정보 전체를 가져오기
+
