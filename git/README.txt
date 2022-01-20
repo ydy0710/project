@@ -8,6 +8,12 @@ Git의 주요 개념들
 ▶️ pull: Git 저장소 서버로부터 내 컴퓨터 로컬로 버전 정보 전체를 가져오기
 
 
+▶️ Working Directory: 내가 작업하려는 PC 내의 디렉터리
+▶️ Staging Area: git commit하기전에 저장되는 git의 공간(커밋 예정인 파일,디렉터리들이 모여있는 곳)
+▶️ Local Repository: 내 PC에 파일이 저장되는 개인용 저장소
+▶️ Remote Repositroy: 원격 저장소(깃허브)
+
+
 
 - 특정 폴더를 생성한다.
 mkdir 
