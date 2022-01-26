@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-bind Example</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id = "app">
+        <h1>{{ feel }}</h1>
+        <!-- v-bind 디렉티브를 사용하면 html 속성에 
+             Vue 인스턴스 내의 값을 사용할수 있습니다. -->
+        <img v-bind:src="good"/>
+        <!-- v-bind는 사용자의 편의를 위해
+             :src와 같이 약어를 사용할 수 있습니다.
+             : + 속성명 ex) :src, :href...-->
+        <img :src="bad"/>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data:{
+                feel:'나의 기분',
+                good:'./img/good.png',
+                bad:'./img/bad.png'
+            }
+        })
+    </script>
+</body>
+</html>

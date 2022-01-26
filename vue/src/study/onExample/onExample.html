@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>on Example</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id = "app">
+        {{ number }}
+        <!-- v-on 디렉티브는 이벤트 리스너의 역할을 한다.
+             v-on:이벤트이름="메소드이름" 형식으로 설정한다. -->
+        <button v-on:click="rollDice">주사위 던지기</button>
+    </div>
+    
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                number: 0 //주사위 숫자를 저장할 변수
+            },
+            methods: {
+                //주사위를 던졌을 때 실행되는 함수
+                rollDice: function() {
+                    var random = Math.floor(Math.random() * (6)) + 1;
+                    this.number = random;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

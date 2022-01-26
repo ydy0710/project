@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-bind Example2</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id = "app">
+        <h1>{{ feel }}</h1>
+        <!-- 삼항 연산자를 사용하여 bind의 값을 바꿀수 있습니다.
+             console에서 app.feels의 값을 바꾸면 img가 바뀌는것을 확인할 수 있습니다. -->
+        <img :src="feels ? good : bad"/>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data:{
+                feel:'나의 기분',
+                feels: true,
+                good:'../img/good.png',
+                bad:'../img/bad.png'
+            }
+        })
+    </script>
+</body>
+</html>

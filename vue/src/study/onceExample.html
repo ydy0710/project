@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-once Example</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <!-- v-once 디렉티브는 HTML코드로 출력이 된 후에
+             어떤 후처리가 있더라도 처음 출력값을 유지시킬 때 사용합니다. -->
+        <h1 v-once>{{ title }}</h1>
+        <p>{{ titleChange() }}</p>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                title : '안녕하세요'
+            },
+            methods: {
+                // titleChange 호출 시 title 변경
+                titleChange: function() {
+                    this.title = '반갑습니다'
+                    return this.title
+                }
+            }
+        })
+    </script>
+</body>
+</html>
