@@ -14,7 +14,7 @@
 	- AA를 commit하여 서버에 반영한다.
 - Delete Branch
 	- F1 > Delete Branch 후 로컬 BB branch를 선택한다.
-
+	- 참고URL : https://jintrue.tistory.com/entry/github-git-branch-al-%EB%82%A8%EC%95%84%EC%9E%88%EB%8A%94-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EC%82%AD%EC%A0%9C
 - 서버 BB branch는 github 접속해서 삭제한다.	
 - Fetch (Prune) 
 	- 서버 BB branch가 삭제된 것을 로컬에 반영한다. (로컬 BB도 삭제됨)
