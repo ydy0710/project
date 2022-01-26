@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-text Example</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id = "app">
+        <!-- Vue 인스턴스의 test값을 엘리먼트의 내부 값으로 설정 -->
+        <span v-text = "test"></span>
+        <br/>
+        <!-- html 태그자체가 텍스트형태로 렌더링 되기 때문에
+             html 태그를 사용할때는 v-html을 사용해야합니다. -->
+        <span v-text = "html"></span>
+    </div>
+    
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                test: 'v-text 테스트입니다.',
+                html: '<i>v-text html태그 테스트입니다.</i>'
+            }
+        })
+    </script>
+</body>
+</html>

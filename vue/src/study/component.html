@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Example</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id = "app">
+        <app-header></app-header>
+        <app-content></app-content>
+        <app-footer></app-footer>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id = "app2">
+        <app-header></app-header>
+        <app-content></app-content>
+        <app-footer></app-footer>
+    </div>
+
+    <script>
+    //전역 컴포넌트
+    Vue.component('app-header',{
+        template: '<div><h1>{{ title }}</h1><button @click="titleChange()">click</button></div>',
+        data() {
+            return {
+                title: 'Header',
+            }
+        },
+        methods: {
+            titleChange() {
+                this.title = '헤더입니다.'
+            }
+        }
+    });
+
+    Vue.component('app-content',{
+        template: '<div><h1>{{ title }}</h1><button @click="titleChange()">click</button></div>',
+        data() {
+            return {
+                title: 'Content',
+            }
+        },
+        methods: {
+            titleChange() {
+                this.title = '컨텐츠입니다.'
+            }
+        }
+    });
+    
+    //Vue.Component('컴포넌트 이름', 컴포넌트 내용)
+    var app = new Vue({
+        // '컴포넌트 이름', 컴포넌트 내용
+        components: {
+            'app-footer': {
+                template: '<div><h1>{{ title }}</h1><button @click="titleChange()">click</button></div>',
+                data() {
+                    return {
+                        title: 'Footer',
+                    }
+                },
+                methods: {
+                    titleChange() {
+                        this.title = '푸터입니다.'
+                    }
+                }
+            }
+        },
+        el: '#app'
+    })
+
+    var app2 = new Vue({
+        components: {
+            'app-footer': {
+                template: '<div><h1>{{ title }}</h1><button @click="titleChange()">click</button></div>',
+                data() {
+                    return {
+                        title: 'Footer',
+                    }
+                },
+                methods: {
+                    titleChange() {
+                        this.title = '푸터입니다.'
+                    }
+                }
+            }
+        },
+        el: '#app2'
+    })
+    </script>
+</body>
+</html>

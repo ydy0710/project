@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>on Example</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id = "app">
+        <span>ID : </span><input type = "text" placeholder="아이디를 입력하세요"/>
+        <br>
+        <span>PW : </span><input v-on:keyup.enter="login()" type = "text" placeholder="비밀번호를 입력하세요"/>
+    </div>
+    
+    <script>
+        var app = new Vue({
+            el: '#app',
+            methods: {
+               login() {
+                   alert('로그인 완료!')
+               }
+            }
+        })
+    </script>
+</body>
+</html>

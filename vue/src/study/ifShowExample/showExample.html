@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-show Example</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id = "app">
+        안녕하세요
+        <!-- v-show 디렉티브는 해당 엘리먼트를 보여줄지 말지
+             true/false 값으로 지정할 수 있습니다.
+             console에서 show의 값을 바꾸면 span이 사라지는것을 확인할 수 있습니다. -->
+        <span v-show="show" v-text="title"></span>
+    </div>
+    
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                title: '사라집니다.',
+                show: true
+            }
+        })
+    </script>
+</body>
+</html>

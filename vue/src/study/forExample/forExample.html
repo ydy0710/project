@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for Example</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id = "app">
+        <!-- v-for 디렉티브는 
+             비슷한 내용을 반복적으로 보여줘야 하는 경우 사용합니다.
+             v-for="아이템명 in array의 형식으로 작성합니다."-->
+             <h1>일주일</h1>
+             <ul>
+                <li v-for="item in list">{{ item }}</li>
+             </ul>
+    </div>
+    
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                list: ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일']
+            },
+            methods: {
+               
+            }
+        })
+    </script>
+</body>
+</html>

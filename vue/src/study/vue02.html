@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue.js Sample</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>   
+    </script> 
+  </head>
+  <body>
+    <div id="app">
+      <p>원본 메시지: "{{ message }}"</p>
+      <p>역순으로 표시한 메시지: "{{ reversedMessage }}"</p>
+      <p>역순으로 표시한 메시지: "{{ reversedMessage1() }}"</p>
+
+      <div v-if="type === 'A'">
+        A
+      </div>
+      <div v-else-if="type === 'B'">
+        B
+      </div>
+      <div v-else-if="type === 'C'">
+        C
+      </div>
+      <div v-else>
+        Not A/B/C
+      </div>      
+    </div>
+    <br>
+
+    <script>
+      var app = new Vue({
+        el: "#app",
+        type: 'C',
+        data: {
+          message: "Hello Vue.js!1",
+        },
+
+        computed: {
+          // 계산된 getter
+          reversedMessage: function () {
+            // `this` 는 vm 인스턴스를 가리킵니다.
+            return this.message.split('').reverse().join('')
+          }
+        },
+        
+        // 컴포넌트 내부
+        methods: {
+          reversedMessage1: function () {
+            return this.message.split('').reverse().join('')
+          }
+        }        
+      });
+    
+    </script>
+  </body>
+</html>

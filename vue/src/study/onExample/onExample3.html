@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>on Example</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id = "app">
+        {{ count }}
+        <!-- event Object 뿐아니라 임의로 생성한 값도 인수로 받아
+             함수에서 인자로 사용할수 있습니다. -->
+        <button v-on:click="addCount(2)">+2</button>
+    </div>
+    
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                count: 0
+            },
+            methods: {
+                addCount: function(number) {
+                    this.count = this.count + number;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

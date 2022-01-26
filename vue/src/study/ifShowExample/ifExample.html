@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if Example</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id = "app">
+        <h2>console에서 app.show값을 바꿔주세요</h2>
+        <br>
+        <br>
+            <!-- v-if 디렉티브는 v-if의 상태값이 true면 해당 태그를 렌더링하고
+                 false인 경우 해당 태그를 렌더링하지 않는 디렉티브입니다.
+                 v-else디렉티브는 v-if의 조건문이 만족하지 않는 경우 렌더링됩니다. -->
+            <h1 v-if = "show">
+                보입니다
+            </h1>
+            <h1 v-else>
+                안보입니다
+            </h1>
+            <br>
+            <br>
+            <!-- v-if와 v-show의 차이점은 개발자도구로 확인하면 볼 수 있습니다.
+                 v-if는 <!->표시로 아예 렌더링 되지 않고
+                 v-show는 display:none 된 것을 확인할 수 있습니다. -->
+            <h1 v-show = "show">v-show 테스트입니다.</h1>
+    </div>
+    
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                show: true
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for Example</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id = "app">
+        <h1>요일별 심경변화</h1>
+        <ul>
+            <!-- 기존 엘리먼트를 재사용, 재정렬하기 위해서 v-for의 각 항목들에
+                 고유한 key 속성을 제공해야 합니다.
+                이 항목은 v-for의 속성처럼 작동하기 때문에 v-bind를 사용하여 바인딩 해야합니다. -->
+            <li v-for="item in weekList" v-bind:key="item.day">{{ item.day }} - {{ item.feel }}</li>
+        </ul>
+    </div>
+    
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                weekList: [
+                    {day : '월요일', feel: '하..'},
+                    {day : '화요일', feel: '아직도 화요일이네..'},
+                    {day : '수요일', feel: '이제야 수요일이네..'},
+                    {day : '목요일', feel: '그래도 내일 금요일이네..'},
+                    {day : '금요일', feel: 'ㅋㅋ!..'},
+                    {day : '토요일', feel: 'ㅋㅋ!!..'},
+                    {day : '일요일', feel: '내일 벌써 월요일이네..'},
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

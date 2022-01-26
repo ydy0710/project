@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-text Example</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id = "app">
+        <!-- html태그와 비교를 위해 추가 -->
+        <span v-text = "html"></span>
+        <br>
+        <br>
+        <!-- HTML 코드를 직접 입력해줄 때 사용하는 디렉티브입니다
+             innerHtml 속성에 연결어 있어. 태그 문자열, 스크립트도 전부 먹히기 때문에
+             XSS 공격 등에 취약하여 꼭 필요한 경우가 아니면 
+             {{...}}이중괄호, v-text 를 사용하는걸 추천합니다. -->
+        <span v-html = "html"></span>
+    </div>
+    
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                html: '<i>v-text html태그 테스트입니다.</i>'
+            }
+        })
+    </script>
+</body>
+</html>
