@@ -13,7 +13,8 @@
 	- AA의 변경사항을 적용한다.
 	- AA를 commit하여 서버에 반영한다.
 - Delete Branch
-	- F1 > Delete Branch 후 서버 BB branch를 선택한다.
-	
+	- F1 > Delete Branch 후 로컬 BB branch를 선택한다.
+
+- 서버 BB branch는 github 접속해서 삭제한다.	
 - Fetch (Prune) 
 	- 서버 BB branch가 삭제된 것을 로컬에 반영한다. (로컬 BB도 삭제됨)
