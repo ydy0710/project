@@ -1,0 +1,19 @@
+- 원본은 AA, 작업branch는 BB
+- Create Branch from...   origin
+	- AA 기준 BB branch를 생성한다.
+- BB branch로 변경한 후 작업한다.
+- 생성 branch에서 신규 또는 수정 작업
+	- BB에서 작업한다.
+- branch에서 작업한 것 모두 commit
+	- BB를 commit한다.
+	- 서버에 BB branch가 생성된다.
+- Merge Branch
+	- branch를 AA로 변경한다.
+	- F1 > Merge Branch 후 서버의 BB branch를 선택한다.
+	- AA의 변경사항을 적용한다.
+	- AA를 commit하여 서버에 반영한다.
+- Delete Branch
+	- F1 > Delete Branch 후 서버 BB branch를 선택한다.
+	
+- Fetch (Prune) 
+	- 서버 BB branch가 삭제된 것을 로컬에 반영한다. (로컬 BB도 삭제됨)
